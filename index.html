@@ -1,14 +1,167 @@
 <!doctype html>
-<html lang="en">
+<html lang="ar" dir="rtl">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/anbiya/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Anbiya</title>
-    <script type="module" crossorigin src="/anbiya/assets/index-HTVRyteF.js"></script>
-    <link rel="stylesheet" crossorigin href="/anbiya/assets/index-BlS4vcyY.css">
+    <meta
+      name="theme-color"
+      content="#fbfaf6"
+      media="(prefers-color-scheme: light)"
+    />
+    <meta
+      name="theme-color"
+      content="#14171a"
+      media="(prefers-color-scheme: dark)"
+    />
+    <meta
+      name="description"
+      content="تم إيقاف موقع «أنبياء». انتقل محتواه إلى فهرس القرآن."
+    />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 446.78 446.78'%3E%3Cpath fill='%231e8a90' d='m435.07,378.5l-68.21-68.21c20.94-31.62,33.15-69.52,33.15-110.29C400,89.54,310.46,0,200,0S0,89.54,0,200s89.54,200,200,200c40.76,0,78.67-12.21,110.29-33.15l68.21,68.21c15.62,15.62,40.95,15.62,56.57,0h0c15.62-15.62,15.62-40.95,0-56.57Zm-242.33-85.97c0,5.18-5.27,8.76-10.17,7.04-12.08-4.31-32.56-10.67-47.95-10.67-17.48,0-40.14,5.49-54.44,10.26-5.13,1.68-10.94-2.09-10.94-7.49V123.52c0-5.49,3.09-10.58,8.22-12.58,12.8-4.9,34.24-10.94,57.17-10.94,26.52,0,46.95,9.08,55.85,16.16,1.54,1.18,2.27,3.09,2.27,4.99v171.36Zm138.04-.86c0,5.4-5.81,9.22-10.94,7.49-14.3-4.77-36.96-10.26-54.44-10.26-15.39,0-35.87,6.36-47.95,10.67-4.86,1.73-10.17-1.86-10.17-7.04V121.16c0-1.91.77-3.81,2.27-4.99,8.9-7.08,29.33-16.16,55.85-16.16,22.93,0,44.36,6.04,57.17,10.99,5.13,1.95,8.22,7.04,8.22,12.53v168.14Z'/%3E%3C/svg%3E"
+    />
+    <title>أنبياء</title>
+    <style>
+      :root {
+        --page: #fbfaf6;
+        --surface: #ffffff;
+        --line: #e7e3d7;
+        --ink: #1c1a14;
+        --ink-2: #57503f;
+        --accent: #1e8a90;
+        --accent-ink: #ffffff;
+        --radius-card: 1rem;
+        --radius-pill: 999px;
+        color-scheme: light;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --page: #14171a;
+          --surface: #1b1f23;
+          --line: #2c3136;
+          --ink: #edeceb;
+          --ink-2: #b8b4ab;
+          --accent: #45b8b1;
+          --accent-ink: #08211f;
+          color-scheme: dark;
+        }
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        font-size: 112.5%;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100dvh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 1.5rem;
+        background-color: var(--page);
+        color: var(--ink);
+        font-family:
+          system-ui,
+          -apple-system,
+          "Segoe UI",
+          "Noto Sans Arabic",
+          Tahoma,
+          sans-serif;
+      }
+
+      .card {
+        width: 100%;
+        max-width: 30rem;
+        background-color: var(--surface);
+        border: 1px solid var(--line);
+        border-radius: var(--radius-card);
+        padding: 2.5rem 2rem;
+        text-align: center;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+      }
+
+      .logo {
+        width: 3rem;
+        height: 3rem;
+        margin: 0 auto 1.25rem;
+        display: block;
+      }
+
+      h1 {
+        margin: 0 0 0.75rem;
+        font-size: 1.375rem;
+        font-weight: 700;
+      }
+
+      p {
+        margin: 0 0 1.75rem;
+        color: var(--ink-2);
+        line-height: 1.7;
+      }
+
+      .cta {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        background-color: var(--accent);
+        color: var(--accent-ink);
+        text-decoration: none;
+        font-weight: 600;
+        padding: 0.75rem 1.5rem;
+        border-radius: var(--radius-pill);
+        transition: opacity 0.15s ease;
+      }
+
+      .cta:hover,
+      .cta:focus-visible {
+        opacity: 0.88;
+      }
+
+      .cta:focus-visible {
+        outline: 2px solid var(--accent);
+        outline-offset: 2px;
+      }
+
+      .url {
+        margin: 1.25rem 0 0;
+        font-size: 0.875rem;
+        color: var(--ink-2);
+        direction: ltr;
+        unicode-bidi: isolate;
+      }
+
+      .url a {
+        color: inherit;
+      }
+    </style>
   </head>
   <body>
-    <div id="root"></div>
+    <main class="card">
+      <svg
+        class="logo"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 446.78 446.78"
+        aria-hidden="true"
+      >
+        <path
+          fill="var(--accent)"
+          d="m435.07,378.5l-68.21-68.21c20.94-31.62,33.15-69.52,33.15-110.29C400,89.54,310.46,0,200,0S0,89.54,0,200s89.54,200,200,200c40.76,0,78.67-12.21,110.29-33.15l68.21,68.21c15.62,15.62,40.95,15.62,56.57,0h0c15.62-15.62,15.62-40.95,0-56.57Zm-242.33-85.97c0,5.18-5.27,8.76-10.17,7.04-12.08-4.31-32.56-10.67-47.95-10.67-17.48,0-40.14,5.49-54.44,10.26-5.13,1.68-10.94-2.09-10.94-7.49V123.52c0-5.49,3.09-10.58,8.22-12.58,12.8-4.9,34.24-10.94,57.17-10.94,26.52,0,46.95,9.08,55.85,16.16,1.54,1.18,2.27,3.09,2.27,4.99v171.36Zm138.04-.86c0,5.4-5.81,9.22-10.94,7.49-14.3-4.77-36.96-10.26-54.44-10.26-15.39,0-35.87,6.36-47.95,10.67-4.86,1.73-10.17-1.86-10.17-7.04V121.16c0-1.91.77-3.81,2.27-4.99,8.9-7.08,29.33-16.16,55.85-16.16,22.93,0,44.36,6.04,57.17,10.99,5.13,1.95,8.22,7.04,8.22,12.53v168.14Z"
+        />
+      </svg>
+      <h1>تم إيقاف موقع «أنبياء»</h1>
+      <p>
+        انتقل محتوى «أنبياء» إلى فهرس القرآن، الذي يشمل فهرسًا أوسع لكل جذور
+        الكلمات والأسماء العلَم في القرآن الكريم.
+      </p>
+      <a class="cta" href="https://fihres.softnoor.dev">الانتقال إلى فهرس القرآن</a>
+      <p class="url"><a href="https://fihres.softnoor.dev">fihres.softnoor.dev</a></p>
+    </main>
   </body>
 </html>
